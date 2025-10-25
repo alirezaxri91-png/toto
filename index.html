@@ -166,7 +166,7 @@
 <!-- صفحه ورود -->
 <div class="login-container active" id="login-page">
   <div class="login-box">
-    <h2>🎈 خوش اومدی به دنیای توتو 🎈</h2>
+    <h2>🎈 خوش اومدی توتوی جدید 🎈</h2>
     <input type="text" id="username" placeholder="اسمتو بنویس 🌟">
     <br>
     <button onclick="login()">ورود 🚀</button>
@@ -179,12 +179,12 @@
     <div class="sidebar">
       <h2>🎬 دسته‌ها</h2>
       <button onclick="showCategory('spongebob')">باب اسفنجی 🧽</button>
-      <button onclick="showCategory('coming')">در حال اضافه شدن 🚧</button>
+      <button onclick="showCategory('coming')">  به زودی...   🚧</button>
     </div>
 
     <div class="content" id="content-area">
       <h2 id="welcome"></h2>
-      <p>یکی از دسته‌ها رو انتخاب کن تا ماجراجویی‌ شروع بشه 🎉</p>
+      <p> یکی از دسته‌ها رو انتخاب کن     🎉</p>
     </div>
   </div>
 
@@ -212,7 +212,7 @@ function showCategory(category) {
   const content = document.getElementById('content-area');
   if (category === 'spongebob') {
     content.innerHTML = `
-      <h2>🧽 باب اسفنجی در ماجراجویی جدید! 🐠</h2>
+      <h2>🧽  باب اسفنجی سینمایی  جدید! کیفیت پایین 🐠</h2>
       <iframe src="https://www.aparat.com/video/video/embed/videohash/v08q3k0/vt/frame" allowfullscreen></iframe>
       <p>یه قسمت بامزه از باب اسفنجی رو ببین 😄</p>
     `;
@@ -229,3 +229,4 @@ window.onload = () => {
 
 </body>
 </html>
+
