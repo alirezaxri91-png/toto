@@ -3,171 +3,228 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>سایت کودکانه توتو</title>
+<title>🎈 سایت کودکانه توتو 🎈</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
   body {
-    background: linear-gradient(135deg, #6e28d9, #ff66cc);
-    padding: 0 24px;
-    color: white;
     margin: 0;
+    font-family: "Vazirmatn", sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #6e28d9, #ff4fd8, #ffb84f, #6ee7b7);
+    background-size: 400% 400%;
+    animation: bg 10s ease infinite;
+  }
+
+  @keyframes bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .login-container, .main-container {
+    display: none;
     height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Vazirmatn", sans-serif;
-    overflow: hidden;
-    position: relative;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
   }
 
-  /* ستاره‌ها و حباب‌ها برای جلوه کودکانه */
-  body::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url('https://cdn.pixabay.com/photo/2017/02/07/14/25/star-2048727_1280.png'),
-                url('https://cdn.pixabay.com/photo/2017/07/19/09/35/bubble-2510573_1280.png');
-    background-size: 150px, 200px;
-    background-repeat: repeat;
-    opacity: 0.15;
-    animation: floaty 20s linear infinite;
+  .active {
+    display: flex;
   }
 
-  @keyframes floaty {
-    from { background-position: 0 0, 0 0; }
-    to { background-position: 1000px 1000px, -1000px 1000px; }
+  .login-box {
+    background: rgba(255,255,255,0.2);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    backdrop-filter: blur(8px);
+    width: 90%;
+    max-width: 400px;
   }
 
+  .login-box h2 {
+    margin-bottom: 20px;
+    color: #ffeb3b;
+    text-shadow: 2px 2px #000;
+  }
+
+  .login-box input {
+    width: 80%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 15px;
+  }
+
+  .login-box button {
+    background: linear-gradient(45deg, #ffeb3b, #ff9800);
+    border: none;
+    color: #5b1db8;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .login-box button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #fff176, #ffd54f);
+  }
+
+  /* صفحه اصلی */
   .container {
     display: flex;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 20px;
+    flex-direction: row;
+    width: 95%;
+    max-width: 1100px;
+    margin: 60px auto;
+    background: rgba(255,255,255,0.15);
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
     overflow: hidden;
-    width: 90%;
-    max-width: 900px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px);
-    z-index: 2;
   }
 
   .sidebar {
-    width: 200px;
-    background: linear-gradient(180deg, #5b1db8, #7b3efc);
-    padding: 20px;
+    width: 240px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
   }
 
   .sidebar h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    text-align: center;
     color: #ffeb3b;
-    text-shadow: 0 0 10px #fff;
+    font-size: 22px;
+    text-shadow: 2px 2px #000;
   }
 
   .sidebar button {
-    background: linear-gradient(90deg, #ffeb3b, #ffc107);
-    color: #5b1db8;
+    background: linear-gradient(45deg, #ffeb3b, #ff9800);
     border: none;
-    padding: 10px;
-    border-radius: 10px;
-    cursor: pointer;
+    color: #5b1db8;
     font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: 0.4s;
   }
 
   .sidebar button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(90deg, #fff176, #ffeb3b);
+    transform: scale(1.1);
   }
 
   .content {
     flex: 1;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
     position: relative;
   }
 
   iframe {
     width: 100%;
-    height: 400px;
+    height: 420px;
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
+    margin-top: 15px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
   }
 
-  h2 {
-    text-shadow: 0 0 10px #ffd54f;
-  }
-
-  /* نوشته پایین صفحه */
   footer {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
     text-align: center;
-    color: #fff;
-    font-size: 16px;
+    margin: 20px 0;
     font-weight: bold;
-    text-shadow: 0 0 10px #ff80ab;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000;
+    font-size: 18px;
   }
 
-  /* انیمیشن حباب‌های کوچیک */
-  .bubble {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    animation: rise 10s linear infinite;
+  /* ریسپانسیو */
+  @media (max-width: 768px) {
+    .container { flex-direction: column; }
+    .sidebar { width: 100%; flex-direction: row; overflow-x: auto; justify-content: center; }
+    .sidebar button { width: auto; }
   }
 
-  @keyframes rise {
-    from { transform: translateY(100vh) scale(0.5); opacity: 0.7; }
-    to { transform: translateY(-10vh) scale(1.2); opacity: 0; }
-  }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="sidebar">
-    <h2>دسته‌بندی‌ها</h2>
-    <button onclick="showCategory('spongebob')">باب اسفنجی 🧽</button>
-    <button onclick="showCategory('coming')">در حال اضافه شدن...</button>
-  </div>
-
-  <div class="content" id="content-area">
-    <h2>به دنیای رنگی خوش اومدی 🌈</h2>
-    <p>یه دسته رو انتخاب کن تا ویدیو ببینی 🎬</p>
+<!-- صفحه ورود -->
+<div class="login-container active" id="login-page">
+  <div class="login-box">
+    <h2>🎈 خوش اومدی به دنیای توتو 🎈</h2>
+    <input type="text" id="username" placeholder="اسمتو بنویس 🌟">
+    <br>
+    <button onclick="login()">ورود 🚀</button>
   </div>
 </div>
 
-<footer>از طرف 💚 علی و ایمان 💚 برای 💛 مهراد و رادمهر 💛</footer>
+<!-- صفحه اصلی -->
+<div class="main-container" id="main-page">
+  <div class="container">
+    <div class="sidebar">
+      <h2>🎬 دسته‌ها</h2>
+      <button onclick="showCategory('spongebob')">باب اسفنجی 🧽</button>
+      <button onclick="showCategory('coming')">در حال اضافه شدن 🚧</button>
+    </div>
 
-<!-- حباب‌های تصادفی برای زیبایی -->
+    <div class="content" id="content-area">
+      <h2 id="welcome"></h2>
+      <p>یکی از دسته‌ها رو انتخاب کن تا ماجراجویی‌ شروع بشه 🎉</p>
+    </div>
+  </div>
+
+  <footer>💛 از طرف علی و ایمان برای مهراد و رادمهر 💛</footer>
+</div>
+
 <script>
-for (let i = 0; i < 15; i++) {
-  let b = document.createElement('div');
-  b.classList.add('bubble');
-  let size = Math.random() * 60 + 20;
-  b.style.width = b.style.height = size + 'px';
-  b.style.left = Math.random() * 100 + '%';
-  b.style.animationDuration = (8 + Math.random() * 5) + 's';
-  document.body.appendChild(b);
+function login() {
+  const name = document.getElementById('username').value.trim();
+  if (name) {
+    localStorage.setItem('toto_user', name);
+    showMainPage(name);
+  } else {
+    alert('لطفاً اسمتو بنویس 🌟');
+  }
+}
+
+function showMainPage(name) {
+  document.getElementById('login-page').classList.remove('active');
+  document.getElementById('main-page').classList.add('active');
+  document.getElementById('welcome').innerHTML = `🎉 خوش اومدی ${name}! 🎉`;
 }
 
 function showCategory(category) {
   const content = document.getElementById('content-area');
   if (category === 'spongebob') {
     content.innerHTML = `
-      <h2>باب اسفنجی 🧽</h2>
+      <h2>🧽 باب اسفنجی در ماجراجویی جدید! 🐠</h2>
       <iframe src="https://www.aparat.com/video/video/embed/videohash/v08q3k0/vt/frame" allowfullscreen></iframe>
+      <p>یه قسمت بامزه از باب اسفنجی رو ببین 😄</p>
     `;
   } else {
-    content.innerHTML = `<h2>به‌زودی ویدیوهای بیشتری اضافه میشه 🚀</h2>`;
+    content.innerHTML = `<h2>🎥 ویدیوهای بیشتری در راه‌اند! 🚀</h2>`;
   }
 }
+
+window.onload = () => {
+  const savedName = localStorage.getItem('toto_user');
+  if (savedName) showMainPage(savedName);
+};
 </script>
 
 </body>
